@@ -12,7 +12,7 @@ class City(models.Model):
 
 class Street(models.Model):
     name = models.CharField(max_length=200)
-    city = models.ForeignKey(City, on_delete=models.CASCADE, to_field='name')
+    city = models.ForeignKey(City, on_delete=models.CASCADE, to_field='name', related_name='city')
     timestamp = models.DateTimeField(auto_now_add=True)
 
     class Meta:
