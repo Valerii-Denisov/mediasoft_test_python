@@ -12,4 +12,4 @@ class CitySerializer(serializers.HyperlinkedModelSerializer):
 class StreetSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Street
-        fields = ('id', 'name')
+        fields = ('id', 'name', 'city')
