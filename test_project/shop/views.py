@@ -17,10 +17,14 @@ class ShopViewSet(viewsets.ModelViewSet):
 
         street = self.request.query_params.get('street', default=None)
         city = self.request.query_params.get('city', default=None)
+        open = self.request.query_params.get('open', default=None)
+        for element in queryset:
+            print(element)
+            print(element.is_open)
         if street is not None:
             queryset = queryset.filter(street=street)
-        '''if city is not None:
-                queryset = queryset.filter(city=city)'''
         if city is not None:
             queryset = queryset.filter(city=city)
+        if open is not None:
+            queryset = [element for element in queryset if element.is_open == open]
         return queryset

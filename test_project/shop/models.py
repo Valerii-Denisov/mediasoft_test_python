@@ -17,7 +17,7 @@ class Shop(models.Model):
     def __str__(self):
         return self.name
 
-""" @property
+    @property
     def is_true_city(self):
         street_city = Street.object.get(id=self.street)['city']
         return self.city['name'] == street_city
@@ -26,5 +26,9 @@ class Shop(models.Model):
     def is_open(self):
         now = datetime.datetime.now()
         now_time = '{0}:{1}'.format(now.hour, now.minute)
-        return now_time > str(self.to_open_time) and now_time < str(self.to_close_time)"""
+        if now_time > str(self.to_open_time) and now_time < str(self.to_close_time):
+            return 1
+        else:
+            return 0
+
 
