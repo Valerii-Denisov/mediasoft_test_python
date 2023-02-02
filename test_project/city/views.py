@@ -12,7 +12,7 @@ class CityViewSet(viewsets.ModelViewSet):
 class StreetViewSet(viewsets.ModelViewSet):
     serializer_class = StreetSerializer
 
-    def get_queryset(self):
+    '''def get_queryset(self):
         """
         Optionally restricts the returned purchases to a given user,
         by filtering against a `username` query parameter in the URL.
@@ -20,5 +20,11 @@ class StreetViewSet(viewsets.ModelViewSet):
         city_id = self.kwargs['pk']
         city = City.objects.get(pk=city_id)
         filter_queryset = Street.objects.filter(city=city)
-        print(City.objects.all())
+        return filter_queryset'''
+    def get_queryset(self):
+        """
+        Optionally restricts the returned purchases to a given user,
+        by filtering against a `username` query parameter in the URL.
+        """
+        filter_queryset = Street.objects.filter(pk=self.kwargs['pk'])
         return filter_queryset

@@ -19,4 +19,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('city/', include('test_project.city.urls')),
+    path('shop/', include('test_project.shop.urls'), name='street-detail'),
 ]
