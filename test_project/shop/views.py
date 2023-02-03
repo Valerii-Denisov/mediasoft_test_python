@@ -5,7 +5,6 @@ from .models import Shop
 
 
 class ShopViewSet(viewsets.ModelViewSet):
-   # queryset = Shop.objects.all()
     serializer_class = ShopSerializer
 
     def get_queryset(self):
@@ -17,14 +16,17 @@ class ShopViewSet(viewsets.ModelViewSet):
 
         street = self.request.query_params.get('street', default=None)
         city = self.request.query_params.get('city', default=None)
-        open = self.request.query_params.get('open', default=None)
-        for element in queryset:
-            print(element)
-            print(element.is_open)
+        is_open = self.request.query_params.get('open', default=None)
         if street is not None:
             queryset = queryset.filter(street=street)
         if city is not None:
             queryset = queryset.filter(city=city)
-        if open is not None:
-            queryset = [element for element in queryset if element.is_open == open]
+        if is_open == '0':
+            queryset = [
+                element for element in queryset if element.is_open == 0
+            ]
+        elif is_open == '1':
+            queryset = [
+                element for element in queryset if element.is_open == 1
+            ]
         return queryset

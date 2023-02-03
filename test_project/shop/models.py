@@ -1,7 +1,7 @@
 from django.db import models
 from test_project.city.models import Street, City
 from django.core.validators import MinValueValidator
-import datetime
+import datetime, time
 
 
 # Create your models here.
@@ -24,9 +24,9 @@ class Shop(models.Model):
 
     @property
     def is_open(self):
-        now = datetime.datetime.now()
-        now_time = '{0}:{1}'.format(now.hour, now.minute)
-        if now_time > str(self.to_open_time) and now_time < str(self.to_close_time):
+        t = time.localtime()
+        t = time.strftime('%H:%M:%S', t)
+        if str(self.to_open_time) < t < str(self.to_close_time):
             return 1
         else:
             return 0
