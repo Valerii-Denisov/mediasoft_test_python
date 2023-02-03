@@ -18,6 +18,6 @@ class ShopSerializer(serializers.ModelSerializer):
         )
     def to_representation(self, instance):
         rep = super().to_representation(instance)
-        rep['city'] = CitySerializer(instance.city).data['name']
-        rep['street'] = StreetSerializer(instance.street).data['name']
+        #rep['city'] = CitySerializer(instance.city).data['name']
+        #rep['street'] = StreetSerializer(instance.street).data['name']
         return rep
