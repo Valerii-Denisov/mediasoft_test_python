@@ -1,7 +1,7 @@
 from django.db import models
 from test_project.city.models import Street, City
 from django.core.validators import MinValueValidator
-import datetime, time
+import time
 
 
 # Create your models here.
@@ -9,7 +9,10 @@ class Shop(models.Model):
     name = models.CharField(max_length=200, unique=True)
     city = models.ForeignKey(City, on_delete=models.CASCADE, null=True)
     street = models.ForeignKey(Street, on_delete=models.CASCADE, null=True)
-    house = models.SmallIntegerField(validators=[MinValueValidator(1)], default=1)
+    house = models.SmallIntegerField(
+        validators=[MinValueValidator(1)],
+        default=1,
+    )
     to_open_time = models.TimeField(null=True)
     to_close_time = models.TimeField(null=True)
     timestamp = models.DateTimeField(auto_now_add=True)
@@ -30,5 +33,3 @@ class Shop(models.Model):
             return 1
         else:
             return 0
-
-

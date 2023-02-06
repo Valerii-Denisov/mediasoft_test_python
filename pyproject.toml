@@ -1,8 +1,16 @@
 [tool.poetry]
 name = "mediasoft_test_python"
 version = "0.1.0"
-description = ""
+description = "The project contains a test task for mediasoft.team and is an API for getting data from a database. The database is represented by models: city, street, store."
 authors = ["Valerii-Denisov <klerk919191@gmail.com>"]
+packages = [{ include = "test_project" },]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: Free for non-commercial use",
+    "Operating System :: POSIX",
+    "Programming Language :: Python",
+]
+repository = "https://github.com/Valerii-Denisov/mediasoft_test_python"
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -16,6 +24,7 @@ django-filter = "^22.1"
 python-dotenv = "^0.21.1"
 
 [tool.poetry.dev-dependencies]
+flake8 = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
