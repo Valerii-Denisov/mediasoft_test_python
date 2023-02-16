@@ -10,10 +10,6 @@
 ### CI Action:
 [![API_CI](https://github.com/Valerii-Denisov/mediasoft_test_python/actions/workflows/project_CI.yml/badge.svg)](https://github.com/Valerii-Denisov/mediasoft_test_python/actions/workflows/project_CI.yml)
 
-
-Railway:
-https://task-manager-denisov.up.railway.app
-
 #### for install: 
 ```
 git clone https://github.com/Valerii-Denisov/mediasoft_test_python.git
