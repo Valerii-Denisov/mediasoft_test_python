@@ -1,0 +1,41 @@
+[
+{
+    "model": "shop.shop",
+    "pk": 1,
+    "fields": {
+        "name": "test1",
+        "city": 1,
+        "street": 1,
+        "house": 1,
+        "to_open_time": "06:00:00",
+        "to_close_time": "18:00:00",
+        "timestamp": "2023-02-02T09:01:31.144Z"
+    }
+},
+{
+    "model": "shop.shop",
+    "pk": 2,
+    "fields": {
+        "name": "test2",
+        "city": 2,
+        "street": 2,
+        "house": 2,
+        "to_open_time": "06:00:00",
+        "to_close_time": "18:00:00",
+        "timestamp": "2023-02-02T09:02:31.144Z"
+    }
+},
+{
+    "model": "shop.shop",
+    "pk": 3,
+    "fields": {
+        "name": "test3",
+        "city": 1,
+        "street": 1,
+        "house": 2,
+        "to_open_time": "18:00:00",
+        "to_close_time": "00:00:00",
+        "timestamp": "2023-02-02T09:03:31.144Z"
+    }
+}
+]

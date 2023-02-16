@@ -15,9 +15,9 @@ class ShopViewSet(viewsets.ModelViewSet):
             street = self.request.query_params.get('street', default=None)
             city = self.request.query_params.get('city', default=None)
             is_open = self.request.query_params.get('open', default=None)
-            if street is not None:
+            if street is not None and street != '':
                 queryset = queryset.filter(street=street)
-            if city is not None:
+            if city is not None and city != '':
                 queryset = queryset.filter(city=city)
             if is_open == '0':
                 queryset = [
@@ -27,6 +27,8 @@ class ShopViewSet(viewsets.ModelViewSet):
                 queryset = [
                     element for element in queryset if element.is_open == 1
                 ]
+            else:
+                return queryset
             return queryset
 
     def create(self, request, *args, **kwargs):

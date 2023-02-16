@@ -1,0 +1,36 @@
+[
+{
+    "model": "city.city",
+    "pk": 1,
+    "fields": {
+        "name": "citi1",
+        "timestamp": "2023-02-02T07:33:54.566Z"
+    }
+},
+{
+    "model": "city.city",
+    "pk": 2,
+    "fields": {
+        "name": "city2",
+        "timestamp": "2023-02-02T07:34:02.556Z"
+    }
+},
+{
+    "model": "city.street",
+    "pk": 1,
+    "fields": {
+        "name": "Street 1",
+        "city": 1,
+        "timestamp": "2023-02-02T09:00:24.095Z"
+    }
+},
+{
+    "model": "city.street",
+    "pk": 2,
+    "fields": {
+        "name": "test",
+        "city": 2,
+        "timestamp": "2023-02-02T09:00:33.532Z"
+    }
+}
+]
